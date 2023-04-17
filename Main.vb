@@ -1,34 +1,13 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
 
 Public Class Main
-    Public procces_count As Integer = 1
+    Public process_count As Integer = 1
     Public default_task As Integer = 0
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public arrival_time(), burst_time(), priority_list() As String
 
-        'Dim processes_number As String =
-        '    InputBox("Please enter the desired number of processes", "CPU Scheduling")
-
-        'MessageBox.Show("You Inputted " & processes_number, "Input",
-        '                MessageBoxButtons.OKCancel, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button1,
-        '                MessageBoxOptions.RightAlign)
-
-
-
-        'Dim a As String = "1,2,3,4,5,6,7"
-        'Dim arary As String() = a.Split(",")
-
-        'ReDim Preserve arary(6)
-        'arary.Append(3)
-        'MsgBox(arary(4))
-
-
-
+    Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Display_On_MainScreen(Display_Screen)
     End Sub
-    'Friend Sub MyTextbox_Changed(sender As Object, e As EventArgs)
-    'Write code here.
-    'End Sub
-
-
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Close()
@@ -40,7 +19,14 @@ Public Class Main
         Display_On_MainScreen(CPU_Process)
     End Sub
 
-    Sub Display_On_MainScreen(frm As Form)
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        ' Display_Screen.Hide()
+        Display_On_MainScreen(Display_Screen)
+    End Sub
+
+
+
+    Public Sub Display_On_MainScreen(frm As Form)
         pnlMainScreen.Controls.Clear()
         frm.TopLevel = False
         pnlMainScreen.Controls.Add(frm)
@@ -48,10 +34,10 @@ Public Class Main
     End Sub
 
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
-        procces_count = InputBox("How many process do you want to enter?", "CPU Scheduling Algorithms")
+        process_count = InputBox("How many process do you want to enter?", "CPU Scheduling Algorithms")
         CPU_Process.Close()
         default_task = 0
         Display_On_MainScreen(CPU_Process)
-        Button1.Enabled = True
+        Button1.Enabled = False
     End Sub
 End Class
