@@ -23,34 +23,15 @@ Partial Class Main
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
-        Me.btnStart = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.pnlMainScreen = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnHome = New System.Windows.Forms.Button()
         Me.pnlButtonScreen = New System.Windows.Forms.Panel()
+        Me.btnSource = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.pnlButtonScreen.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'btnStart
-        '
-        Me.btnStart.Location = New System.Drawing.Point(31, 16)
-        Me.btnStart.Name = "btnStart"
-        Me.btnStart.Size = New System.Drawing.Size(75, 25)
-        Me.btnStart.TabIndex = 1
-        Me.btnStart.Text = "Start"
-        Me.btnStart.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(31, 47)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Exit"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'pnlMainScreen
         '
@@ -63,36 +44,54 @@ Partial Class Main
         Me.pnlMainScreen.Size = New System.Drawing.Size(470, 315)
         Me.pnlMainScreen.TabIndex = 4
         '
-        'Button1
+        'btnHome
         '
-        Me.Button1.Enabled = False
-        Me.Button1.Location = New System.Drawing.Point(31, 114)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(31, 76)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 6
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnHome.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnHome.BackColor = System.Drawing.Color.DarkSeaGreen
+        Me.btnHome.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnHome.Location = New System.Drawing.Point(15, 10)
+        Me.btnHome.Name = "btnHome"
+        Me.btnHome.Size = New System.Drawing.Size(120, 50)
+        Me.btnHome.TabIndex = 6
+        Me.btnHome.Text = "Home"
+        Me.btnHome.UseVisualStyleBackColor = False
         '
         'pnlButtonScreen
         '
-        Me.pnlButtonScreen.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.pnlButtonScreen.Controls.Add(Me.btnStart)
-        Me.pnlButtonScreen.Controls.Add(Me.Button1)
-        Me.pnlButtonScreen.Controls.Add(Me.Button3)
-        Me.pnlButtonScreen.Controls.Add(Me.Button2)
-        Me.pnlButtonScreen.Location = New System.Drawing.Point(387, 387)
+        Me.pnlButtonScreen.BackColor = System.Drawing.Color.Transparent
+        Me.pnlButtonScreen.Controls.Add(Me.btnSource)
+        Me.pnlButtonScreen.Controls.Add(Me.btnExit)
+        Me.pnlButtonScreen.Controls.Add(Me.btnHome)
+        Me.pnlButtonScreen.Location = New System.Drawing.Point(388, 388)
         Me.pnlButtonScreen.Name = "pnlButtonScreen"
-        Me.pnlButtonScreen.Size = New System.Drawing.Size(152, 192)
+        Me.pnlButtonScreen.Size = New System.Drawing.Size(150, 190)
         Me.pnlButtonScreen.TabIndex = 7
+        '
+        'btnSource
+        '
+        Me.btnSource.BackColor = System.Drawing.Color.SandyBrown
+        Me.btnSource.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSource.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSource.Location = New System.Drawing.Point(15, 130)
+        Me.btnSource.Name = "btnSource"
+        Me.btnSource.Size = New System.Drawing.Size(120, 50)
+        Me.btnSource.TabIndex = 8
+        Me.btnSource.Text = "Source Code"
+        Me.btnSource.UseVisualStyleBackColor = False
+        '
+        'btnExit
+        '
+        Me.btnExit.BackColor = System.Drawing.Color.IndianRed
+        Me.btnExit.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnExit.Location = New System.Drawing.Point(15, 70)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(120, 50)
+        Me.btnExit.TabIndex = 7
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = False
         '
         'Panel1
         '
@@ -129,12 +128,11 @@ Partial Class Main
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents btnStart As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
     Public WithEvents pnlMainScreen As Panel
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnHome As Button
     Public WithEvents pnlButtonScreen As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents btnExit As Button
+    Friend WithEvents btnSource As Button
 End Class

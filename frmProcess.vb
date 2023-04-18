@@ -1,4 +1,4 @@
-﻿Public Class CPU_Process
+﻿Public Class frmProcess
     Public arrival_time(), burst_time(), priority_list() As TextBox
     Private Sub Processes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim process_count As Integer = Main.process_count - 1
@@ -33,11 +33,11 @@
 
         Select Case Main.default_task
             Case 0
-                arrival_time = Create_TextBox(process_count, loc_x:=loc_x * 2 + x_interval, loc_y:=txtLoc_y, y_interval:=y_interval)
-                burst_time = Create_TextBox(process_count, loc_x:=loc_x, loc_y:=txtLoc_y, y_interval:=y_interval)
+                arrival_time = Create_TextBox(process_count, loc_x:=loc_x, loc_y:=txtLoc_y, y_interval:=y_interval)
+                burst_time = Create_TextBox(process_count, loc_x:=loc_x * 2 + x_interval, loc_y:=txtLoc_y, y_interval:=y_interval)
             Case 1
-                Display_TextBox(process_count, Main.arrival_time, loc_x:=loc_x * 2 + x_interval, loc_y:=txtLoc_y, y_interval:=y_interval)
-                Display_TextBox(process_count, Main.burst_time, loc_x:=loc_x, loc_y:=txtLoc_y, y_interval:=y_interval)
+                arrival_time = Display_TextBox(process_count, Main.arrival_time, loc_x:=loc_x, loc_y:=txtLoc_y, y_interval:=y_interval)
+                burst_time = Display_TextBox(process_count, Main.burst_time, loc_x:=loc_x * 2 + x_interval, loc_y:=txtLoc_y, y_interval:=y_interval)
                 priority_list = Create_TextBox(process_count, loc_x:=loc_x * 3 + x_interval * 2, loc_y:=txtLoc_y, y_interval:=y_interval)
 
                 Dim lblCPUProcess = New Label
@@ -59,12 +59,29 @@
                 ReDim Main.arrival_time(Main.process_count - 1)
                 ReDim Main.burst_time(Main.process_count - 1)
                 For index As Integer = 0 To Main.process_count - 1
-                    Main.arrival_time(index) = arrival_time(index).Text
-                    Main.burst_time(index) = burst_time(index).Text
+                    If Integer.TryParse(arrival_time(index).Text, Main.arrival_time(index)) And Integer.TryParse(burst_time(index).Text, Main.burst_time(index)) Then
+                        If Main.arrival_time(index) < 0 Then
+                            MsgBox("Please enter a valid positive arrival time", MsgBoxStyle.Exclamation, "Error")
+                            Exit Sub
+                        ElseIf Main.burst_time(index) < 0 Then
+                            MsgBox("Please enter a valid positive burst time", MsgBoxStyle.Exclamation, "Error")
+                            Exit Sub
+                        ElseIf Main.burst_time(index) < 1 Then
+                            MsgBox("Please enter a non-zero burst time", MsgBoxStyle.Exclamation, "Error")
+                            Exit Sub
+                        Else
+                            Main.arrival_time(index) = arrival_time(index).Text
+                            Main.burst_time(index) = burst_time(index).Text
+                            Main.Display_On_MainScreen(frmMenu)
+                        End If
+                    Else
+                        MsgBox("Please enter a valid number", MsgBoxStyle.Exclamation, "Error")
+                        Exit Sub
+                    End If
                 Next
             Case 1
-                ReDim Main.arrival_time(Main.process_count - 1)
-                ReDim Main.burst_time(Main.process_count - 1)
+                ReDim Preserve Main.arrival_time(Main.process_count - 1)
+                ReDim Preserve Main.burst_time(Main.process_count - 1)
                 ReDim Main.priority_list(Main.process_count - 1)
                 For index As Integer = 0 To Main.process_count - 1
                     Main.arrival_time(index) = arrival_time(index).Text
@@ -72,18 +89,17 @@
                     Main.priority_list(index) = priority_list(index).Text
                 Next
         End Select
-        Main.Button1.Enabled = True
     End Sub
 
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Select Case Main.default_task
             Case 0
                 Close()
-                Main.Display_On_MainScreen(Display_Screen)
+
             Case 1
-                Main.Button1.Enabled = False
                 Close()
         End Select
+        Main.Display_On_MainScreen(frmDisplay)
 
     End Sub
 
@@ -108,12 +124,12 @@
         Return txtBox.Cast(Of TextBox).ToArray()
     End Function
 
-    Private Sub Display_TextBox(txtBox_count As Integer,
-                                txtBox_values() As String,
+    Private Function Display_TextBox(txtBox_count As Integer,
+                                txtBox_values() As Integer,
                                 Optional loc_x As Integer = 20,
                                 Optional loc_y As Integer = 20,
                                 Optional y_interval As Integer = 20,
-                                Optional x_interval As Integer = 20)
+                                Optional x_interval As Integer = 20) As TextBox()
         Dim txtBox(txtBox_count)
 
         For index As Integer = 0 To txtBox_count
@@ -121,11 +137,12 @@
             With txtBox(index)
                 .Size = New Size(100, 20)
                 .Location = New Point(loc_x + x_interval, loc_y)
-                .Text = txtBox_values(index)
+                .Text = txtBox_values(index).ToString
             End With
             loc_y += y_interval
             Controls.Add(txtBox(index))
         Next
-    End Sub
+        Return txtBox.Cast(Of TextBox).ToArray()
+    End Function
 
 End Class
