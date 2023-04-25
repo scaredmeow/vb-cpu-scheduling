@@ -117,6 +117,7 @@ Partial Class frmMenu
         Me.btnPS.TabIndex = 7
         Me.btnPS.Text = "Priority Scheduling"
         Me.btnPS.UseVisualStyleBackColor = False
+        Me.btnPS.Visible = False
         '
         'btnRR
         '
@@ -130,6 +131,7 @@ Partial Class frmMenu
         Me.btnRR.TabIndex = 8
         Me.btnRR.Text = "Round Robin"
         Me.btnRR.UseVisualStyleBackColor = False
+        Me.btnRR.Visible = False
         '
         'btnEdit
         '
@@ -143,6 +145,7 @@ Partial Class frmMenu
         Me.btnEdit.TabIndex = 9
         Me.btnEdit.Text = "Edit Processes"
         Me.btnEdit.UseVisualStyleBackColor = False
+        Me.btnEdit.Visible = False
         '
         'frmMenu
         '
