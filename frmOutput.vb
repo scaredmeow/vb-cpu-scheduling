@@ -9,6 +9,10 @@
         End Select
         Main.Display_On_MainScreen(frmMenu)
         frmMenu.myTimer.Stop()
+        Main.Label1.Visible = False
+        Main.Label2.Visible = False
+        Main.lblProcessing.Visible = False
+        Main.lblTimer.Visible = False
     End Sub
 
     Private Sub frmOutput_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -27,7 +31,7 @@
             With lblProcess(index)
                 .Size = New Size(30, 20)
                 .Location = New Point(10, loc_y + 3)
-                .Text = (index + 1).ToString
+                .Text = (Chr(Asc("a") + index))
             End With
             loc_y += y_interval
             Controls.Add(lblProcess(index))

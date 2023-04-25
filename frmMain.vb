@@ -21,6 +21,8 @@
         frmMenu.Close()
         Label1.Visible = False
         Label2.Visible = False
+        lblProcessing.Visible = False
+        lblTimer.Visible = False
     End Sub
 
 

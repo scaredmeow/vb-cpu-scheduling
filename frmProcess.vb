@@ -16,7 +16,7 @@
             With lblProcess(index)
                 .Size = New Size(30, 20)
                 .Location = New Point(10, loc_y + 3)
-                .Text = (index + 1).ToString
+                .Text = (Chr(Asc("a") + index))
             End With
             loc_y += y_interval
             Controls.Add(lblProcess(index))

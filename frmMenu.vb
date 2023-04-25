@@ -26,6 +26,8 @@ Public Class frmMenu
         End Select
         Main.Label1.Visible = False
         Main.Label2.Visible = False
+        Main.lblProcessing.Visible = False
+        Main.lblTimer.Visible = False
         Main.Display_On_MainScreen(frmDisplay)
     End Sub
 
@@ -103,6 +105,8 @@ Public Class frmMenu
         Main.lblProcessing.Text = "Idle"
         Main.Label1.Visible = True
         Main.Label2.Visible = True
+        Main.lblProcessing.Visible = True
+        Main.lblTimer.Visible = True
         myTimer.Interval = 1000
         myTimer.Start()
     End Sub
@@ -288,7 +292,6 @@ Public Class frmMenu
 
                 If checkArrival > current_time Then
                     remainingTime = tempBurst - (checkArrival - current_time)
-                    MsgBox("arrival")
                     If remainingTime > checkBurst Then
                         queueProcess.Add(Chr(Asc("a") + tempIndex))
                         current_time += tempBurst - remainingTime
@@ -312,7 +315,6 @@ Public Class frmMenu
 
                     Dim sortedlist As List(Of Integer) = count_burst.Keys.ToList()
                     sortedlist.Sort()
-                    MsgBox("arrival2131")
                     For Each i In sortedlist
                         If arrival(burst.IndexOf(i)) <= current_time And i < curr_min Then
                             curr_min = i
@@ -357,6 +359,7 @@ Public Class frmMenu
         Loop
 
         algoCompute()
+        display()
 
 
 
