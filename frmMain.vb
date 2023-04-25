@@ -17,7 +17,12 @@
 
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
         Display_On_MainScreen(frmDisplay)
+        frmMenu.myTimer.Stop()
+        frmMenu.Close()
+        Label1.Visible = False
+        Label2.Visible = False
     End Sub
+
 
     Private Sub btnSource_Click(sender As Object, e As EventArgs) Handles btnSource.Click
         Dim URL As String = "https://github.com/scaredmeow/vb-cpu-scheduling"
