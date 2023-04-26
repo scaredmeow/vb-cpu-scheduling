@@ -23,6 +23,8 @@
         Label2.Visible = False
         lblProcessing.Visible = False
         lblTimer.Visible = False
+        lblTimer.Text = 0
+        frmMenu.tickCount = 0
     End Sub
 
 

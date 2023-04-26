@@ -28,6 +28,8 @@ Public Class frmMenu
         Main.Label2.Visible = False
         Main.lblProcessing.Visible = False
         Main.lblTimer.Visible = False
+        Main.lblTimer.Text = 0
+        tickCount = 0
         Main.Display_On_MainScreen(frmDisplay)
     End Sub
 
