@@ -32,23 +32,26 @@ Partial Class frmOutput
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lblWaitingTime = New System.Windows.Forms.Label()
         Me.lblTurnaround = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(40, 15)
+        Me.Label1.Location = New System.Drawing.Point(80, 110)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(36, 13)
+        Me.Label1.Size = New System.Drawing.Size(73, 25)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Arrival"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(100, 15)
+        Me.Label2.Location = New System.Drawing.Point(200, 110)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(31, 13)
+        Me.Label2.Size = New System.Drawing.Size(62, 25)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Burst"
         '
@@ -57,9 +60,10 @@ Partial Class frmOutput
         Me.btnClose.BackColor = System.Drawing.Color.IndianRed
         Me.btnClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnClose.Location = New System.Drawing.Point(420, 10)
+        Me.btnClose.Location = New System.Drawing.Point(840, 19)
+        Me.btnClose.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.btnClose.Name = "btnClose"
-        Me.btnClose.Size = New System.Drawing.Size(27, 23)
+        Me.btnClose.Size = New System.Drawing.Size(54, 44)
         Me.btnClose.TabIndex = 6
         Me.btnClose.Text = "X"
         Me.btnClose.UseVisualStyleBackColor = False
@@ -67,27 +71,30 @@ Partial Class frmOutput
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(160, 15)
+        Me.Label3.Location = New System.Drawing.Point(320, 110)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.Size = New System.Drawing.Size(120, 25)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Completion"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(330, 15)
+        Me.Label4.Location = New System.Drawing.Point(660, 110)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 13)
+        Me.Label4.Size = New System.Drawing.Size(84, 25)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Waiting"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(243, 15)
+        Me.Label5.Location = New System.Drawing.Point(486, 110)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 13)
+        Me.Label5.Size = New System.Drawing.Size(123, 25)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "Turnaround"
         '
@@ -96,9 +103,10 @@ Partial Class frmOutput
         Me.Label6.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label6.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label6.Location = New System.Drawing.Point(378, 45)
+        Me.Label6.Location = New System.Drawing.Point(756, 87)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 61)
+        Me.Label6.Size = New System.Drawing.Size(160, 117)
         Me.Label6.TabIndex = 10
         Me.Label6.Text = "Average Waiting Time"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -108,9 +116,10 @@ Partial Class frmOutput
         Me.Label7.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label7.Location = New System.Drawing.Point(378, 119)
+        Me.Label7.Location = New System.Drawing.Point(756, 229)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(80, 73)
+        Me.Label7.Size = New System.Drawing.Size(160, 140)
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "Average Turnaround Time"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -118,27 +127,40 @@ Partial Class frmOutput
         'lblWaitingTime
         '
         Me.lblWaitingTime.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblWaitingTime.Location = New System.Drawing.Point(399, 81)
+        Me.lblWaitingTime.Location = New System.Drawing.Point(798, 156)
+        Me.lblWaitingTime.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblWaitingTime.Name = "lblWaitingTime"
-        Me.lblWaitingTime.Size = New System.Drawing.Size(39, 23)
+        Me.lblWaitingTime.Size = New System.Drawing.Size(78, 44)
         Me.lblWaitingTime.TabIndex = 12
         Me.lblWaitingTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblTurnaround
         '
         Me.lblTurnaround.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.lblTurnaround.Location = New System.Drawing.Point(399, 167)
+        Me.lblTurnaround.Location = New System.Drawing.Point(798, 321)
+        Me.lblTurnaround.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.lblTurnaround.Name = "lblTurnaround"
-        Me.lblTurnaround.Size = New System.Drawing.Size(39, 13)
+        Me.lblTurnaround.Size = New System.Drawing.Size(78, 25)
         Me.lblTurnaround.TabIndex = 13
         Me.lblTurnaround.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(25, 15)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(122, 25)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Gantt Chart"
+        '
         'frmOutput
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(470, 315)
+        Me.ClientSize = New System.Drawing.Size(940, 606)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lblTurnaround)
         Me.Controls.Add(Me.lblWaitingTime)
         Me.Controls.Add(Me.Label7)
@@ -151,6 +173,7 @@ Partial Class frmOutput
         Me.Controls.Add(Me.Label1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
         Me.Name = "frmOutput"
         Me.Text = "frmOutput"
         Me.ResumeLayout(False)
@@ -168,4 +191,5 @@ Partial Class frmOutput
     Friend WithEvents Label7 As Label
     Friend WithEvents lblWaitingTime As Label
     Friend WithEvents lblTurnaround As Label
+    Friend WithEvents Label8 As Label
 End Class

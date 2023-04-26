@@ -13,6 +13,8 @@
         Main.Label2.Visible = False
         Main.lblProcessing.Visible = False
         Main.lblTimer.Visible = False
+        Main.lblTimer.Text = 0
+        frmMenu.tickCount = 0
     End Sub
 
     Private Sub frmOutput_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,7 +23,7 @@
         Dim lblProcess(Main.process_count)
 
         loc_x = 20
-        loc_y = 40
+        loc_y = 80
         txtLoc_y = loc_y
         y_interval = 25
         x_interval = 30
@@ -37,6 +39,22 @@
             Controls.Add(lblProcess(index))
         Next
 
+        Dim time_idx As Integer = 0
+        Dim loc_x_idx As Integer = 30
+        For Each process In frmMenu.queueProcess
+            lblProcess(time_idx) = New Label
+            With lblProcess(time_idx)
+                .Size = New Size(30, 20)
+                .BorderStyle = BorderStyle.FixedSingle
+                .Location = New Point(loc_x_idx * (time_idx) + 15, 25)
+                .Text = (process & frmMenu.queueTime(time_idx))
+            End With
+
+            Controls.Add(lblProcess(time_idx))
+
+            time_idx += 1
+        Next
+
         lblProcess(index) = New Label
         With lblProcess(index)
             .Size = New Size(20, 30)
@@ -45,6 +63,7 @@
         End With
 
         Controls.Add(lblProcess(index))
+
 
         arrival_time = Display_TextBox(process_count, Main.arrival_time, loc_x:=loc_x, loc_y:=txtLoc_y, y_interval:=y_interval)
         burst_time = Display_TextBox(process_count, Main.burst_time, loc_x:=loc_x * 2.5 + x_interval, loc_y:=txtLoc_y, y_interval:=y_interval)
